@@ -1,17 +1,15 @@
 {{ if .IsNamedParams -}}
 <div{{ with .Get "class" }} class="{{ . }}"{{ end }}>
 <iframe
-    width="100%" {{ with .Get "height" }} height="{{ . }}"{{ else }}height="138"{{ end }}
-    src="https://{{ .Get "host" }}/front/embed.html?&amp;type={{ with .Get "type" }}{{ . }}{{ else }}track{{ end }}&amp;id={{ .Get "id" }}"
-    scrolling="no" frameborder="no">
+    width="100%" {{ with .Get "height" }} height="{{ . }}"{{ else }}height="138"{{ end }} style="border: none; overflow: hidden;"
+    src="https://{{ .Get "host" }}/front/embed.html?&amp;type={{ with .Get "type" }}{{ . }}{{ else }}track{{ end }}&amp;id={{ .Get "id" }}">
 </iframe>
 </div>
 {{- else -}}
 <div>
 <iframe
-    width="100%" height="138"
-    src="https://{{ .Get 0 }}/front/embed.html?&amp;type=track&amp;id={{ .Get 1 }}"
-    scrolling="no" frameborder="no">
+    width="100%" height="138" style="border: none; overflow: hidden;"
+    src="https://{{ .Get 0 }}/front/embed.html?&amp;type=track&amp;id={{ .Get 1 }}">
 </iframe>
 </div>
 {{- end }}
