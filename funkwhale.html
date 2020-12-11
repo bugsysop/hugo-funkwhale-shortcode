@@ -1,7 +1,7 @@
 {{ if .IsNamedParams -}}
 <div{{ with .Get "class" }} class="{{ . }}"{{ end }}>
 <iframe
-    width="100%" {{ with .Get "height" }} height="{{ . }}"{{ else }}height="13"{{ end }}
+    width="100%" {{ with .Get "height" }} height="{{ . }}"{{ else }}height="138"{{ end }}
     src="https://{{ .Get "host" }}/front/embed.html?&amp;type={{ with .Get "type" }}{{ . }}{{ else }}track{{ end }}&amp;id={{ .Get "id" }}"
     scrolling="no" frameborder="no">
 </iframe>
